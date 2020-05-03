@@ -4,9 +4,9 @@
 # 3. Run the test
 # 4. Deploy the code
 # set the language
-language: node_js
-node_js:
-  - "11.0"
+# language: node_js
+# node_js:
+#   - "11.0"
 # we need super user level permission
 # sudo: required -- removed deprecated
 # tell travis ci that we need a copy of docker
