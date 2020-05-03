@@ -17,6 +17,6 @@ COPY . .
 
 # This image will host the project
 FROM nginx:alpine 
-
+EXPOSE 80
 # copy over the build folder from the build stage
 COPY --from=build /app/build /usr/share/nginx/html
