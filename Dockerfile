@@ -1,5 +1,5 @@
 # BUILD STAGE
-FROM node:alpine
+FROM node:alpine as build
 
 # create/specify working directory inside the container
 WORKDIR /app
@@ -16,7 +16,7 @@ COPY . .
 # Otherwise, we only need to deploy the build folder
 
 # This image will host the project
-FROM nginx:alpine 
+FROM nginx
 EXPOSE 80
 # copy over the build folder from the build stage
-COPY --from=0 /app/build /usr/share/nginx/html
+COPY --from=build /app/build /usr/share/nginx/html
