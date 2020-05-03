@@ -12,6 +12,7 @@ RUN npm install
 COPY . .
 RUN npm run build
 
+
 # DEPLOYMENT STAGE
 # Since upon deployment we are not going to change the code as in development so we don't need to copy over the whole build image
 # Otherwise, we only need to deploy the build folder
@@ -20,4 +21,4 @@ RUN npm run build
 FROM nginx
 EXPOSE 80
 # copy over the build folder from the build stage
-COPY --from=0 /app/dist /usr/share/nginx/html
+COPY --from=0 /app/dist/* /usr/share/nginx/html/
