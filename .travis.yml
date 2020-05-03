@@ -32,6 +32,8 @@ deploy:
     bucket_name: "elasticbeanstalk-us-east-2-072479754912"
     # a folder inside the S3 bucket above
     bucket_path: "docker"
+    cleanup: false
+    edge: true
     # to prevent Travis CI from deleting build artifacts.
     # skip_cleanup: true -- removed deprecated
     # branches:
