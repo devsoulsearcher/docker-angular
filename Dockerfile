@@ -20,4 +20,4 @@ RUN npm run build
 FROM nginx
 EXPOSE 80
 # copy over the build folder from the build stage
-COPY --from=0 /app/build /usr/share/nginx/html
+COPY --from=0 /app/dist /usr/share/nginx/html
