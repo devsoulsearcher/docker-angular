@@ -10,6 +10,7 @@ RUN npm install
 
 # copy the rest of the files (make sure to create .dockerignore file to exclude local sub folders such as node_modules)
 COPY . .
+RUN npm run build
 
 # DEPLOYMENT STAGE
 # Since upon deployment we are not going to change the code as in development so we don't need to copy over the whole build image
