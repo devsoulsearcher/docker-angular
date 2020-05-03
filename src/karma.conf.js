@@ -39,7 +39,7 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['ChromeHeadless'], // change this to custom chrome when running inside a docker container
+    browsers: ['ChromeCustom'], // change this to custom chrome when running inside a docker container
     singleRun: true,
     restartOnFileChange: true
   });
