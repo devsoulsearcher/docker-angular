@@ -3,7 +3,9 @@
 # 2. Build the docker image
 # 3. Run the test
 # 4. Deploy the code
-
+language: node_js
+node_js:
+  - "11.0"
 # we need super user level permission
 sudo: required
 # tell travis ci that we need a copy of docker
@@ -11,11 +13,11 @@ services:
     - docker
 # series of steps that need to run before the test is run 
 before_install:
-    - docker build -t devsoulsearcher/docker-angular -f docker/Dockerfile.dev .
+    - docker build -t devsoulsearcher/docker -f docker/Dockerfile.dev .
 # series of commands that are need to run the test
 # -- --coverage : this will automatically close the test execution once done
 script:
-    - docker run devsoulsearcher/docker-angular npm run test
+    - docker run devsoulsearcher/docker npm run test
 # configuration for AWS deployment
 deploy:
     # AWS provider
