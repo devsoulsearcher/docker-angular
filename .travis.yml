@@ -8,7 +8,7 @@ language: node_js
 node_js:
   - "11.0"
 # we need super user level permission
-sudo: required
+# sudo: required -- removed deprecated
 # tell travis ci that we need a copy of docker
 services:
     - docker
@@ -25,13 +25,18 @@ deploy:
     provider: elasticbeanstalk
     # Can be find from the URL from the host Docker-env.eba-pebp65fn.us-east-2.elasticbeanstalk.com 
     region: "us-east-2"
-    name: "docker"
+    app: "docker"
     env: "Docker-env"
     # S3 bucket, a cloud storage in AWS
     # get this info by searching S3 from AWS services directory
     bucket_name: "elasticbeanstalk-us-east-2-072479754912"
     # a folder inside the S3 bucket above
     bucket_path: "docker"
+    # to prevent Travis CI from deleting build artifacts.
+    # skip_cleanup: true -- removed deprecated
+    # branches:
+    #     only:
+    #     - master
     # make a deployment only when changes has been made on the master branch
     on:
         branch: master
