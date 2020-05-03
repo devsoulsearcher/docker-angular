@@ -16,4 +16,4 @@ before_install:
 # series of commands that are need to run the test
 # -- --coverage : this will automatically close the test execution once done
 script:
-    - docker run devsoulsearcher/docker-angular npm run test -- --coverage
+    - docker run devsoulsearcher/docker-angular npm run test

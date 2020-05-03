@@ -40,7 +40,7 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['ChromeHeadless'], // change this to custom chrome when running inside a docker container
-    singleRun: false,
+    singleRun: true,
     restartOnFileChange: true
   });
 };
