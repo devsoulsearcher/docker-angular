@@ -2,6 +2,8 @@
 // https://karma-runner.github.io/1.0/config/configuration-file.html
 
 // package that check if test runs inside a docker container
+// https://hackernoon.com/running-karma-tests-with-headless-chrome-inside-docker-ae4aceb06ed3
+// https://www.npmjs.com/package/is-docker
 const isDocker = require('is-docker')();
 
 module.exports = function (config) {
